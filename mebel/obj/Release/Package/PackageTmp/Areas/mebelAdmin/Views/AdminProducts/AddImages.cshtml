@@ -1,0 +1,93 @@
+﻿@model mebel.Models.Product
+@{
+    ViewBag.Title = "AddImage";
+    Layout = "~/Areas/mebelAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center mt-3 mb-5">Add Images To Product</h2>
+
+<div class="row">
+    <div class="col-md-12 my-3">
+        <div class="text-right mb-2 mr-2">
+
+            @Ajax.ActionLink("Yenilə", "GetProductImages", new { id = Model.Id }, new AjaxOptions
+            {
+                HttpMethod = "GET",
+           InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "proPhoto",
+                LoadingElementId = "loading",
+           LoadingElementDuration = 300
+            }, new { @class = "btn btn-primary", id = "refreshButton" })
+            <div class="mt-2">
+                <div id="proPhoto" class="text-center ">
+                    <span>Mehsula aid Sekiller...</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-12 ">
+
+        @using (Ajax.BeginForm("UploadsProductImages", new { id = Model.Id }, new AjaxOptions { HttpMethod = "Post" },
+            new { @class = "dropzone", id = "mydropzone", enctype = "multipart/form-data" }))
+        {
+        }
+    </div>
+    <div class="col-md-12 text-right mt-5 mb-5">
+        <button type="submit" class="btn btn-primary" id="uploadbutton">
+            <i class="fa fa-upload"></i> Adding
+        </button>
+    </div>
+</div>
+@section mainJs{
+    <script src="~/Areas/mebelAdmin/PublicAdmin/assets/dropzone/dropzone.min.js"></script>
+    <script>
+        Dropzone.autoDiscover = false;
+
+        $(function () {
+
+            var dz = null;
+
+            $("#mydropzone").dropzone({
+                autoProcessQueue: false,
+                paramName: "productpictures",
+                //maxFilesize: 15,
+                //maxThumbnailFilesize: 15,
+                //maxFiles: 15,
+                //parallelUploads: 15,
+                acceptedFiles: ".jpeg , .png , .jpg,.gif",
+                uploadMultiple: false,
+                addRemoveLinks: true,
+
+                init: function () {
+                    dz = this;
+                    $("#uploadbutton").click(function () {
+                        dz.processQueue();
+                        $(this).attr("disabled", "disabled")
+                    });
+                },
+                success: function (file) {
+                    var preview = $(file.previewElement);
+                    preview.addClass("dz-success");
+                    setTimeout(function () {
+                        dz.removeFile(file);
+                        refreshProductPicture()
+                    }, 2000)
+                },
+                queuecomplete: function (file) {
+                    refreshProductPicture()
+                    $("#uploadbutton").removeAttr("disabled")
+                },
+                dictDefaultMessage: "Mehsul ilə bağlı şəkilləri bura sürükləyə bilərsiniz.",
+                dictRemoveFile: "Şəkli sil",
+
+            });
+            $("#refreshButton").prepend('<i id="loading" class="fas fa-redo-alt" style="display:none;"></i>&nbsp;');
+            refreshProductPicture()
+        });
+        function refreshProductPicture() {
+            $("#refreshButton").click();
+        }
+    </script>
+}
+

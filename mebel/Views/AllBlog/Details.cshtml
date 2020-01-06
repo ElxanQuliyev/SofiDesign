@@ -1,0 +1,131 @@
+﻿@model mebel.ViewModels.homeModels
+@using mebel.Models
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="main-header main-header-blog"
+         style="background-image:url()">
+    <header>
+        <div class="container text-left">
+            <h1 class="h2 title">@Model.blogDetail.Header</h1>
+            <ol class="breadcrumb breadcrumb-inverted">
+                <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a></li>
+                <li><a href="@Url.Action("Index","AllBlog")">Bloq</a></li>
+                <li><a class="active" href="article4.html">@Model.blogDetail.Header</a></li>
+            </ol>
+        </div>
+    </header>
+</section>
+
+<section class="blog" id="simple-blog-article-view">
+    
+    <div class="container">
+        <header class="hidden">
+            <h3 class="h3 title">@Model.blogDetail.Header</h3>
+        </header>
+        <div class="row">
+            <div class="col-sm-8  col-md-8 ">
+                <div class="blog-post">
+                    <!-- === blog main image & entry info === -->
+                    <div class="blog-image-main">
+                        <img src="@Model.blogDetail.Photo"
+                             alt="@Model.blogDetail.Header"
+                             title="@Model.blogDetail.Header" />
+                    </div>
+                    <div class="blog-post-content">
+
+                        <!-- === blog post title === -->
+
+                        <div class="blog-post-title">
+                            <h1 class="blog-title">
+                                @Model.blogDetail.Header
+                            </h1>
+                            <div class="blog-info blog-info-top">
+
+                                <div class="entry">
+                                    <i class="fa fa-calendar"></i>
+                                    <span>@Model.blogDetail.CreateDate.ToString("MMMM dd,yyyy")</span>
+                                </div>
+                                @*<div class="entry">
+                    <i class="fa fa-comments"></i>
+                    <span>0 comments</span>
+                </div>*@
+                            </div>
+                            <!--/blog-info-->
+                        </div>
+                        <!-- === blog post text === -->
+                        <div class="blog-post-text">
+                            @Model.blogDetail.Description
+                        </div>
+                        <div id="disqus_thread"></div>
+                        <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-mebel20191110072039-azurewebsites-net.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+                        </script>
+                        @*<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>*@
+
+
+                    </div>
+                    <!-- === blog comments === -->
+                 
+
+                </div>
+                <!--blog-post-->
+            </div>
+            <!--col-sm-8-->
+            <div class="col-sm-4 col-md-4 ">
+                <h3 style="margin-bottom:10px">En son Xəbərlər</h3>
+                <div style="border-bottom:1px solid #808080;margin:2px;width:60px;margin-bottom:20px;"></div>
+                @foreach (var item in Model.blogList)
+                {
+                    <div class="resentBlog">
+                        <div class="row">
+                            <div class="col-md-4" style="margin-bottom:25px">
+                                <img class="img-responsive" src="@item.Photo" style="object-fit:contain;max-height:300px;" alt="@item.Photo" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <h6 style="margin-bottom:5px">
+                                        @if (item.Header.Length > 150)
+                                        {
+                                            <a href="@Url.Action("Details","AllBlog",new { id=item.Id})">@item.Header.Substring(0, 150)</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@Url.Action("Details","AllBlog",new { id=item.Id})">@item.Header</a>
+                                        }
+                                    </h6>
+
+                                    <div style="border:1px solid #808080;width:35px;margin:2px"></div>
+                                    <div class="entry">
+                                        <i class="fa fa-calendar"></i>
+                                        <small>@Model.blogDetail.CreateDate.ToString("MMMM dd,yyyy")</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+

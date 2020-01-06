@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@using mebel.Models
+@model mebel.ViewModels.homeModels
+
+<section class="main-header " style="background-image:url(image/cache/catalog/mf_demo/gallery-1-1920x0.jpg)">
+    <header>
+        <div class="container text-left">
+            <h1 class="h2 title">@Model.productDetail.Name</h1>
+            <ol class="breadcrumb breadcrumb-inverted">
+                <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a></li>
+                <li><a class="active" href="@Url.Action("Details",new { id=Model.productDetail.Id})">@Model.productDetail.Name</a></li>
+            </ol>
+        </div>
+    </header>
+</section>
+
+<section class="product">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12" id="product">
+                <div class="main">
+                    <div class="row product-flex">
+                        <div class="col-md-4 col-sm-12 product-flex-info">
+                            <div class="clearfix">
+                                <h1 class="title" data-title="">@Model.productDetail.Name</h1>
+                                <div class="clearfix">
+                                    <div class="text">
+                                            @if (Model.productDetail.Discount != null)
+                                            {
+                                                <del class="h5">@Model.productDetail.Price Azn</del>
+                                                <sup class="h5">@((Model.productDetail.Price - (Model.productDetail.Price * Model.productDetail.Discount) / 100)) Azn</sup>
+                                            }
+                                            else
+                                            {
+                                                <sup class="h5">@Model.productDetail.Price Azn</sup>
+
+                                            }
+                                        <br><br>
+                                    </div>
+                                    <hr>
+                                    <div class="info-box">
+                                        <span><strong>Brend</strong></span>
+                                        <a href="apple.html"><span>@Model.productDetail.Maifacturer.Name</span></a>
+                                    </div>
+                                    <div class="info-box">
+                                        <span><strong>Rəng</strong></span>
+                                        <span>@Model.productDetail.color</span>
+                                    </div>
+                                    <hr />
+                                    <div class="info-box">
+                                        <span><strong>Ölçü:</strong></span>
+                                            <span>@Model.productDetail.Size</span>
+                                    </div>
+                                    @*<div class="info-box">
+                                        <span><strong>Availability:</strong></span>
+                                        <span><i class="fa fa-check-square-o"></i> In Stock</span>
+                                    </div>*@
+
+                                    <hr>
+
+                                    @*<div class="info-box wish_button info-box-addto">
+                        <span><strong>Add to Wish List</strong></span>
+                        <span>
+                            <i class="add" onclick="wishlist.add('44');"><i data-toggle="tooltip" title="" class="fa fa-heart-o" data-original-title="Add to Wish List"></i> Add to Wish List</i>
+                            <i class="added" onclick="wishlist.remove('44');"><i data-toggle="tooltip" title="" class="fa fa-heart" data-original-title="Remove from wish list"></i> Remove from wish list</i>
+                        </span>
+                    </div>*@
+                                    @*<div class="info-box compare_button info-box-addto">
+                        <span><strong>Compare this Product</strong></span>
+                        <span>
+                            <i class="add" onclick="compare.add('44');"><i data-toggle="tooltip" title="" class="fa fa-eye-slash" data-original-title="Compare this Product"></i> Compare this Product</i>
+                            <i class="added" onclick="compare.remove('44');"><i data-toggle="tooltip" title="" class="fa fa-eye" data-original-title="Remove from Compare"></i> Remove from Compare</i>
+                        </span>
+                    </div>*@
+
+                                    @*<div class="form-group">
+                        <label class="control-label" for="input-quantity">Qty</label>
+                        <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control">
+                        <input type="hidden" name="product_id" value="44">
+                        <br>
+                        <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block">Add to Cart</button>
+                    </div>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-12 product-flex-gallery">
+                         
+                            <div class="owl-product-gallery open-popup-gallery">
+                                @foreach (var itm in Model.productImage)
+                                {
+                                        <a href="@itm.Photo"
+                                           title="@itm.Product.Name">
+                                            <img src="@itm.Photo"
+                                                 title="@itm.Product.Name" alt="@itm.Product.Name"  style="object-fit:contain;max-height:450px !important" />
+                                        </a>
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#tab-description" role="tab" data-toggle="tab">
+                                        <i class="icon icon-user"></i>
+                                        <span>Açıqlama</span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab-review" role="tab" data-toggle="tab">
+                                        <i class="icon icon-thumbs-up"></i>
+                                        @*<span>Reviews (0)</span>*@
+                                        </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="tab-description">
+                                    <div class="content">
+                                        <div>
+                                        @Html.Raw(Model.productDetail.Description)    
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="tab-review">
+                                    <div class="content">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts{
+    <script>
+
+        var arrowIcons = [
+            '<span class="icon icon-chevron-left"></span>',
+            '<span class="icon icon-chevron-right"></span>'
+        ];
+
+        //Product slider
+        $(".owl-product-gallery").owlCarousel({
+            transitionStyle: "fadeUp",
+            autoHeight: true,
+            slideSpeed: 800,
+            navigation: true,
+            navigationText: arrowIcons,
+            pagination: true,
+            items: 1,
+            singleItem: true
+        });
+    </script>
+}

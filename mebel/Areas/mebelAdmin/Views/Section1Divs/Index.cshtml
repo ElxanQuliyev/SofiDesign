@@ -1,0 +1,39 @@
+﻿@model IEnumerable<mebel.Models.section1Divs>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/mebelAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<p>
+    <a class="btn btn-success" href="@Url.Action("Create","Section1Divs")">Add new Section1 Item</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Header</th>
+            <th>Description</th>
+            <th>Photo</th>
+            <th>#</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var section1 in Model)
+        {
+            <tr>
+                <td>@section1.Header</td>
+                <td>@section1.Descripiton</td>
+                <td style="width:25%"><img src="@section1.Photo" class="img-thumbnail" alt="Alternate Text" /> </td>
+                <td>
+                    <a href="@Url.Action("Edit","Section1Divs",new { id=section1.Id})">Edit</a> |
+                    <a href="@Url.Action("Details","Section1Divs",new { id=section1.Id})">Details</a> |
+                    <a href="@Url.Action("Delete","Section1Divs",new { id=section1.Id})">Delete</a>
+
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+

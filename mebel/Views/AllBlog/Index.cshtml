@@ -1,0 +1,70 @@
+﻿@model mebel.ViewModels.homeModels
+@using mebel.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <section class="main-header " style="background-image:url()">
+        <header>
+            <div class="container text-center">
+                <h1 class="h2 title">Bloq</h1>
+                <ol class="breadcrumb breadcrumb-inverted">
+                    <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a></li>
+                    <li><a class="active" href=" @Url.Action("About", "Home") ">Bloq</a></li>
+                </ol>
+            </div>
+        </header>
+    </section>
+<div class="row" id="products-items" style="padding:25px;">
+    @foreach (var item in Model.blogList)
+    {
+
+        <div class="col-sm-6  col-lg-4 item">
+            <article>
+                <a href="@Url.Action("Details","AllBlog",new { id=item.Id})">
+                    <div class="image" style="background-image:url(@item.Photo)">
+                        <img class="img-responsive" src="@item.Photo" alt="@item.Header" title="@item.Header">
+                    </div>
+                    <div class="text hidden">
+                        <div class="title">
+                            <p>@item.CreateDate.ToString("MMMM dd,YYYY")</p>
+                            <h2 class="h5">@item.Header </h2>
+                        </div>
+                        <div class="text-intro">
+                            <p>
+                                @if (item.Header.Length > 150)
+                                {
+                                    @item.Description.Substring(0, 150) <span>[...]</span>
+                                }
+                                else
+                                {
+                                    @item.Description
+                                }
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="entry entry-table">
+                        <div class="date-wrapper">
+                            <div style="margin-top:15px" class="date">
+                                <small>@item.CreateDate.ToString("dd MMMM,yyyy")</small>
+                                <div style="border-bottom:1px solid #808080;margin:2px;width:60px;margin-bottom:20px;"></div>
+
+                            </div>
+                        </div>
+                        <div class="title" style="height: 76px;">
+                            <h2 class="h5">@item.Header</h2>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    }
+
+    <script>
+        $(document).ready(function () {
+            alignHeight('#products-items .item .entry-table .title');
+        });
+    </script>
+
+</div>

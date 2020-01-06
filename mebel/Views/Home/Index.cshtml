@@ -1,0 +1,411 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@using mebel.Models
+@model mebel.ViewModels.homeModels
+@using PagedList;
+@using PagedList.Mvc;
+@*<div class="page-loader"></div>*@
+
+    <div class="wrapper">
+
+        <div class="inc:_header.html"></div>
+
+        <!-- ========================  Header content ======================== -->
+
+        <section class="header-content">
+
+            <div class="owl-slider">
+
+                <!-- === slide item === -->
+                @foreach (section1Divs section1 in Model.section1)
+                {
+                    <div class="item" style="background:linear-gradient(to bottom,rgba(166, 164, 164, 0.1) 0,rgba(5, 0,0, 0.9) 90%),url(@section1.Photo)">
+                        <div class="box">
+                            <div class="container">
+                                <h2 class="title animated h1" data-animation="fadeInDown">@section1.Header</h2>
+                                <div class="animated" data-animation="fadeInUp">
+                                    @section1.Descripiton
+                                </div>
+                                <div class="animated" data-animation="fadeInUp">
+                                    <a href="@Url.Action("Index","AllProducts")" target="_blank" class="btn btn-main"><i class="icon icon-cart"></i> Qapıları kəşf et</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+                <!-- === slide item === -->
+
+
+
+            </div> <!--/owl-slider-->
+        </section>
+
+        <!-- ========================  Icons slider ======================== -->
+
+        <section class="owl-icons-wrapper owl-icons-frontpage">
+
+            <!-- === header === -->
+
+            <header class="hidden">
+                <h2>Kategoriyalar</h2>
+            </header>
+
+            <div class="container">
+
+                <div class="owl-icons">
+
+                    <!-- === icon item === -->
+                    @foreach (Category cat in Model.category)
+                    {
+                        <a href="@Url.Action("Index","AllProducts",new { catId=cat.Id})">
+                            <figure>
+                                <i class="f-icon @(cat.Icons)"></i>
+                                <figcaption>@cat.Name</figcaption>
+                            </figure>
+                        </a>
+                    }
+
+
+
+
+                </div> <!--/owl-icons-->
+            </div> <!--/container-->
+        </section>
+
+        <!-- ========================  Products widget ======================== -->
+
+        <section class="products">
+
+            <div class="container">
+
+                <!-- === header title === -->
+
+                <header>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center " style="margin-top:25px">
+                            <h2 class="title">Məhsullar</h2>
+                            @*<div class="text">
+                                <p>Check out our latest collections</p>
+                            </div>*@
+                        </div>
+                    </div>
+                </header>
+
+                <div class="row">
+
+                    <!-- === product-item === -->
+                    @foreach (Product proItem in Model.products)
+                    {
+                        <div class="col-md-4 col-xs-6">
+
+                            <article>
+                                <div class="info">
+                                    <span class="add-favorite added">
+                                        <a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+                                    </span>
+                                    <span>
+                                        <a href="#productid@(proItem.Id)" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+                                    </span>
+                                </div>
+                                <div class="btn btn-add">
+                                    <a class="text-white" href="@Url.Action("Details","AllProducts",new { id=proItem.Id})">
+                                        <i class="icon icon-cart"></i>
+                                       </a>
+                                </div>
+                                <div class="figure-grid">
+                                    <div class="image">
+                                        <a href="#productid@(proItem.Id)" class="mfp-open">
+                                            <img src="@proItem.Photo" alt="" width="360" height="450" style="object-fit:contain;padding:40px 30px" />
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="text">
+                                    <h2 class="title h4"><a href="@Url.Action("Details","AllProducts",new { id=proItem.Id})">@proItem.Name</a></h2>
+
+                                    @if (proItem.Discount != null)
+                                    {
+                                        <sub class="h5">@proItem.Price Azn</sub>
+                                        <sup class="h5">@((proItem.Price - (proItem.Price * proItem.Discount) / 100)) Azn</sup>
+                                    }
+                                    else
+                                    {
+                                        <sup class="h5">@proItem.Price Azn</sup>
+
+                                    }
+                                    <span class="description clearfix"></span>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- ========================  Product info popup - quick view ======================== -->
+
+                        <div class="popup-main mfp-hide" id="productid@(proItem.Id)">
+
+                            <!-- === product popup === -->
+
+                            <div class="product">
+
+                                <!-- === popup-title === -->
+
+                                <div class="popup-title">
+                                    <div class="h1 title">@proItem.Name <small>@proItem.Category.Name/</small></div>
+                                </div>
+
+                                <!-- === product gallery === -->
+                                <div class="owl-product-gallery">
+
+                                    @foreach (ProductImage item in Model.proPhoto)
+                                    {
+                                        if (item.ProductId == proItem.Id)
+                                        {
+                                            <img src="@item.Photo" alt="" width="640" />
+                                        }
+
+                                    }
+                                </div>
+
+                                <!-- === product-popup-info === -->
+
+                                <div class="popup-content">
+                                    <div class="product-info-wrapper">
+                                        <div class="row">
+
+                                            <!-- === left-column === -->
+
+                                            <div class="col-sm-6">
+                                                <div class="info-box">
+                                                    <strong>Maifacturer</strong>
+                                                    <span>@proItem.Maifacturer.Name</span>
+                                                </div>
+                                                <div class="info-box">
+                                                    <strong>Materials</strong>
+                                                    <span>@proItem.Material.Name</span>
+                                                </div>
+                                                @*<div class="info-box">
+                                                    <strong>Availability</strong>
+                                                    <span><i class="fa fa-check-square-o"></i> in stock</span>
+                                                </div>*@
+                                            </div>
+
+                                            <!-- === right-column === -->
+
+                                            <div class="col-sm-6">
+                                                <div class="info-box">
+                                                    <strong>Rəng</strong>
+                                                    <div class="product-colors clearfix">
+                                                        <span>@proItem.color</span>
+                                                    </div>
+                                                </div>
+                                                <div class="info-box">
+                                                    <strong>Ölçü</strong>
+                                                    <br/>
+                                                    <span>@proItem.Size</span>
+                                                </div>
+                                            </div>
+
+                                        </div> <!--/row-->
+                                    </div> <!--/product-info-wrapper-->
+                                </div> <!--/popup-content-->
+                                <!-- === product-popup-footer === -->
+
+                                <div class="popup-table">
+                                    <div class="popup-cell">
+                                        <div class="price">
+                                            @*<span class="h3">$ 1999,00 <small>$ 2999,00</small></span>*@
+                                            <span class="h3">@(proItem.Discount != null ? proItem.Price - (proItem.Price * proItem.Discount) / 100 : proItem.Price) Azn</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="popup-cell">
+                                        <div class="popup-buttons">
+                                            <a href="@Url.Action("Details","AllProducts",new { id=proItem.Id})"><span class="icon icon-eye"></span> <span class="hidden-xs">Daha Ətrafli</span></a>
+                                            @*<a href="javascript:void(0);"><span class="icon icon-cart"></span> <span class="hidden-xs">Buy</span></a>*@
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> <!--/product-->
+                        </div> <!--popup-main-->
+                    }
+
+
+                </div> <!--/row-->
+                <!-- === button more === -->
+
+                <div class="wrapper-more">
+                    <a href="@Url.Action("Index","AllProducts")" class="btn btn-main">Daha çox</a>
+                </div>
+
+
+            </div> <!--/container-->
+        </section>
+
+
+        <section class="stretcher-wrapper" id="ela-strech-widget-0">
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h1 class="h2 title">Kategoriyalar</h1>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <ul class="stretcher">
+                @foreach(var catItem in Model.category) {
+                 <li class="stretcher-item" style="background-image:url(@catItem.Icons);">
+                    <div class="stretcher-logo">
+                        <div class="text">
+                            <span class="f-icon "></span>
+                            <span class="text-intro">@catItem.Name</span>
+                        </div>
+                    </div>
+                    <a href="@Url.Action("Index","AllProducts",new { catId=catItem.Id})">@catItem.Name</a>
+                </li>
+                    } 
+                <li class="stretcher-item more">
+                    <div class="more-icon">
+                        <span data-title-show="Show more" data-title-hide="+"></span>
+                    </div>
+                    <a href="@Url.Action("Index","AllProducts")"></a>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- ========================  Blog Block ======================== -->
+
+        <section class="blog blog-block">
+
+            <div class="container">
+
+                <!-- === blog header === -->
+
+                <header>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h2 class="title"> Yeniliklər</h2>
+                            
+                        </div>
+                    </div>
+                </header>
+
+                <div class="row">
+
+                    <!-- === blog item === -->
+                    @foreach (var item in Model.blogList)
+                    {
+
+                        <div class="col-sm-4">
+                            <article>
+                                <a href="@Url.Action("Details","AllBlog",new { id=item.Id})">
+                                    <div class="image">
+                                        <img style="height:250px;object-fit:cover" src="@item.Photo" alt="" />
+                                    </div>
+                                    <div class="entry entry-block">
+                                        <div class="date">@item.CreateDate@*.ToString("MMMM dd")*@</div>
+                                        <div class="title">
+                                            <h2 class="h3">@item.Header </h2>
+                                        </div>
+                                        <div class="description">
+                                            <p>
+                                                @item.Description
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="show-more">
+                                        <span class="btn btn-main btn-block">Daha Ətraflı</span>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+
+                    }
+
+
+                </div> <!--/row-->
+                <!-- === button more === -->
+
+                <div class="wrapper-more">
+                    <a href="@Url.Action("Index","AllBlog")" class="btn btn-main">Bütün Bloqlar</a>
+                </div>
+
+            </div> <!--/container-->
+        </section>
+
+        <!-- ========================  Banner ======================== -->
+
+        <section class="banner" style="background-image:url(~/public/assets/images/gallery-4.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8 text-center">
+                        <h2 class="title">@Model.ourstroy.Headers</h2>
+                        <p>
+                            @if (Model.ourstroy.Description.Length > 268)
+                            {
+                                @Model.ourstroy.Description.Substring(0, 268)
+                            }
+                            else
+                            {
+                                @Model.ourstroy.Description
+
+                            }
+                        </p>
+                        <p><a href="@Url.Action("About","Home")" class="btn btn-clean">Daha çox</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================  Instagram ======================== -->
+
+        <section class="instagram">
+
+            <!-- === instagram header === -->
+
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h2 class="h2 title">Follow us <i class="fa fa-instagram fa-2x"></i> Instagram </h2>
+                            <div class="text">
+                                <p>@@sofidesign.az</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- === instagram gallery === -->
+
+            <div class="gallery clearfix">
+                <a class="item" href="#">
+                    <img src="~/public/assets/images/square-1.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="~/public/assets/images/square-2.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="~/public/assets/images/square-3.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="~/public/assets/images/square-4.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="~/public/assets/images/square-5.jpg" alt="Alternate Text" />
+                </a>
+                <a class="item" href="#">
+                    <img src="~/public/assets/images/square-6.jpg" alt="Alternate Text" />
+                </a>
+
+            </div> <!--/gallery-->
+
+        </section>
+
+        <div class="inc:_footer.html"></div>
+
+    </div> <!--/wrapper-->

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<mebel.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/mebelAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="d-flex">
+    @foreach (var item in Model)
+    {
+        <div class="card  col-md-3 " style="">
+            <img src="@item.Icons" class="card-img-top" style="object-fit:contain;height:350px;" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <a href="@Url.Action("Edit","Categories",new { id=item.Id})" class="btn btn-primary">Edit</a>
+                @*<a href="#" class="btn btn-primary">Edit</a>*@
+
+            </div>
+        </div>
+    }
+</div>

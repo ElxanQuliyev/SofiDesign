@@ -1,0 +1,255 @@
+﻿@using mebel.Models
+@using mebel.LangResources
+@model mebel.ViewModels.homeModels
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Web-app fullscreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+
+    <title>Sofi Design</title>
+    <base />
+    <meta name="description" content="My Store" />
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700,700i&display=swap" rel="stylesheet">
+
+    <!--CSS styles-->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/public/css/animate.min.css" rel="stylesheet" />
+    <link href="~/public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/public/css/theme/mf/mainstylesheet/linear-icons.css" rel="stylesheet" />
+
+
+    <link href="~/public/css/theme/mf/js/magnific/magnific-popup.css" rel="stylesheet" />
+    <link media="all" href="~/public/css/theme/mf/mainstylesheet/theme1.css" rel="stylesheet" />
+    <link media="all" href="~/public/css/theme/mf/mainstylesheet/opencart.css" rel="stylesheet" />
+
+    <!--Google fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--JS files-->
+    <script src="~/public/css/theme/mf/js/jquery-2.1.1.min.js"></script>
+    <script src="~/public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/public/css/theme/mf/js/magnific/jquery.magnific-popup.min.js"></script>
+    <script src="~/public/css/theme/mf/js/main.js"></script>
+
+    <link href="~/public/css/theme/mf/js/owlcarousel/owl.carousel.min.css" rel="stylesheet" />
+
+    <link href="~/public/css/theme/mf/js/furniture-icons/furniture-icons.min.css" rel="stylesheet" />
+
+    <script src="~/public/css/theme/mf/js/owlcarousel/jquery.owl.carousel.min.js"></script>
+    @*<link href="image/catalog/mf_demo/icon.png" rel="icon" />*@
+    <script src="~/public/css/theme/mf/js/opencart.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,500i,600,600i,700,700i,800&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Raleway', sans-serif !important;
+
+        }
+    </style>
+</head>
+<body>
+
+    @*<div class="page-loader"></div>*@
+
+    <div class="wrapper">
+
+        <!-- ======================== Navigation ======================== -->
+
+        <nav class="navbar-fixed headerNav">
+
+            <div class="container">
+
+                <!-- ==========  Top navigation ========== -->
+                <div style="">
+                    <div style="position:fixed;padding:0px 15px;left:25px;top:25px;">
+                        <a href="@Url.Action("Index","Home")" class="logo text-white" >
+                            <img class="img-fluid" style="height:60px" src="~/Uploads/Asset 1 (1).svg" />
+
+                        </a>
+                    </div>
+
+                    <div class="navigation navigation-top clearfix">
+                        <ul>
+                            <!--add active class for current page-->
+                            <li><a href="https://www.facebook.com/Sofi-Design-114400053281456/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/doorsofi/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            @*<li class="nav-settings" id="currency" data-action="http://mobel.rumms.ru/index.php?route=common/currency/currency" data-redirect="http://mobel.rumms.ru/index.php?route=common/home">
+                    <a href="javascript:void(0);" class="nav-settings-value">
+                        $ USD
+                    </a>
+
+                </li>*@
+
+                            <li class="nav-settings" id="language">
+                                <a href="@Url.Action("Language","mainLanguage",new { langAttr="az"})" class="nav-settings-value">
+                                    Az
+                                </a>
+                                <ul class="nav-settings-list">
+                                    <li>
+                                        <a href="@Url.Action("Language","mainLanguage",new { langAttr="en"})" class="nav-settings-value">
+                                            En
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Language","mainLanguage",new { langAttr="ru"})" class="nav-settings-value">
+                                            Ru
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li>@*<a href="javascript:void(0);" class="open-login"><i class="icon icon-user"></i></a>*@</li>
+                            <li><a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a></li>
+                            <li>@*<a href="javascript:void(0);" class="open-cart"><i class="icon icon-cart"></i></a>*@</li>
+                        </ul>
+                    </div>
+
+                    <!-- ==========  Main navigation ========== -->
+                    <div class="navigation navigation-main">
+                        @*<div class="col-lg-2">
+                <a href="@Url.Action("Index","Home")" class="logo text-white" style="color:#fff;font-size:1.5em;font-style:italic;font-weight:bolder">
+                    <img class="img-fluid" style="height:90px" src="~/Uploads/Asset.svg" />
+
+                </a>
+            </div>*@
+                        <a href="javascript:void(0);" class="open-login"><i class="icon icon-user"></i></a>
+                        <a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a>
+                        <a href="javascript:void(0);" class="open-cart"><i class="icon icon-cart"></i></a>
+                        <a href="javascript:void(0);" class="open-menu"><i class="icon icon-menu"></i></a>
+                        <div class="floating-menu">
+                            <!--mobile toggle menu trigger-->
+                            <div class="close-menu-wrapper">
+                                <span class="close-menu"><i class="icon icon-cross"></i></span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Index","Home")">@RGlobal.RHome</a>
+                                </li>
+                                <li>
+                                    <a href="#">@RGlobal.RCategory <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                    <div class="navbar-dropdown ">
+                                        <div class="navbar-box">
+                                            <div class="box-2">
+                                                <div class="box clearfix">
+                                                    <ul>
+                                                        @foreach (var catItem in Model.category)
+                                                        {
+                                                            <li><a href="@Url.Action("index","AllProducts",new { catId=catItem.Id})">@catItem.Name</a></li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","AllBlog")">@RGlobal.RBlog</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("about","home")">@RGlobal.RAbout</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div id="search" class="search-wrapper">
+                        <input class="form-control" type="text" name="search" autocomplete="off" value="" placeholder="Search" />
+                        <button class="btn btn-main btn-search"><i class="fa fa-search"></i></button>
+                        <div class="search-results" style="display: none;">
+                        </div>
+                    </div>
+                    <!-- ==========  Login wrapper ========== -->
+
+                    <div class="login-wrapper">
+                        <form action="http://mobel.rumms.ru/index.php?route=account/login" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" value="" placeholder="E-Mail Address">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" value="" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <a href="indexacda.html?route=account/forgotten" class="open-popup">Forgotten Password</a>
+                                <a href="index5502.html?route=account/register">Register Account</a>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-main">Login</button>
+                            <input type="hidden" name="redirect" value="index9328.html?route=common/home" />
+                        </form>
+                    </div>
+
+                    <div id="cart" class="cart-wrapper">
+                        <div class="checkout">
+                            <div class="clearfix">
+                                <p class="text-center">Your shopping cart is empty!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    @RenderBody()
+</div>
+<footer>
+    <div class="container">
+        <div class="footer-showroom">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="mb-5" style="margin-bottom:25px">
+                        <a href="@Url.Action("Index","Home")" class="logo text-white" style="color:#fff;font-size:1.5em;font-style:italic;font-weight:bolder">
+                            <img class="img-fluid" style="height:60px" src="~/Uploads/Asset 1 (1).svg" />
+                        </a>
+                    </div>
+                    <p>Unvan:Dərnəgül yolu ,BöyükŞor</p>
+                    <p>
+                        Mon - Sat: 09 am - 6 pm<br />
+                    </p>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <div class="call-us h4"><span class="icon icon-phone-handset"></span> (+994)50 207 73 13</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-social">
+            <div class="row">
+                <div class="col-sm-push-6 col-sm-6 links">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/Sofi-Design-114400053281456/" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/doorsofi/" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+<script src="~/public/js/bundle1.min.js"></script>
+</body>
+</html>

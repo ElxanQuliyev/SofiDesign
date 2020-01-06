@@ -1,0 +1,43 @@
+﻿@model mebel.Models.section1Divs
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/mebelAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>section1Divs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+
+        <dd style="width:25%">
+            <img src="@Model.Photo" class="img-thumbnail" alt="Alternate Text" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripiton)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripiton)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

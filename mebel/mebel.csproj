@@ -1,0 +1,1327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB1E22FE-90B4-4B6E-9466-397F63CEB50C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mebel</RootNamespace>
+    <AssemblyName>mebel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44372</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\mebelAdmin\Controllers\AdminAccountController.cs" />
+    <Compile Include="Areas\mebelAdmin\Controllers\AdminBlogsController.cs" />
+    <Compile Include="Areas\mebelAdmin\Controllers\AdminMaifacturersController.cs" />
+    <Compile Include="Areas\mebelAdmin\Controllers\AdminOurStoriesController.cs" />
+    <Compile Include="Areas\mebelAdmin\Controllers\AdminProductsController.cs" />
+    <Compile Include="Areas\mebelAdmin\Controllers\AuthenticationFilter.cs" />
+    <Compile Include="Areas\mebelAdmin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\mebelAdmin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\mebelAdmin\Controllers\Section1DivsController.cs" />
+    <Compile Include="Areas\mebelAdmin\mebelAdminAreaRegistration.cs" />
+    <Compile Include="Controllers\AllBlogController.cs" />
+    <Compile Include="Controllers\AllProductsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainLanguageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HttpCookieCollectionExtensions.cs" />
+    <Compile Include="LangResources\RGlobal.az.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RGlobal.az.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LangResources\RGlobal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RGlobal.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LangResources\RGlobal.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RGlobal.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainLanguage.cs" />
+    <Compile Include="Models\Blog.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChooseSize.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LanguageTB.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Maifacturer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Material.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OurStory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductImage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\section1Divs.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Setting.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\homeModels.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\animate.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\aos.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\bootstrap.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\button-builder.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\calendar.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\chartist.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\datatable-extension.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\datatables.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\date-picker.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\daterange-picker.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\dropzone.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\feather-icon.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\flag-icon.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\fontawesome.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\icofont.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\image-cropper.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\jsgrid.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\light-1.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\mapsjs-ui.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\owlcarousel.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\page-builder.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\photoswipe.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\print.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\prism.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\range-slider.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\rating.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\responsive.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\scrollable.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\select2.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\simple-mde.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\sticky.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\style.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\summernote.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\sweetalert2.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\themify.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\timepicker.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\todo.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\tour.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\tree.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\vector-map.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\css\whether-icon.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\dropzone\basic.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\dropzone\basic.min.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\dropzone\dropzone-amd-module.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\dropzone\dropzone.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\dropzone\dropzone.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\dropzone\dropzone.min.css" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\dropzone\dropzone.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\avtar\11.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\avtar\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\banner\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\banner\2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\banner\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\01.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\010.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\011.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\012.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\013.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\014.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\015.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\016.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\02.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\04.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\05.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\06.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\07.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\08.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-lightgallry\09.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\10.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\11.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\12.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\13.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\14.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\15.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\4.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\5.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\6.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\7.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\8.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\big-masonry\9.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\bitcoin\1.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\bitcoin\2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\bitcoin\3.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\bitcoin\chat-1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\bitcoin\chat-2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\bitcoin\market-1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\bitcoin\market-2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\bitcoin\market-3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\bitcoin\market-4.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\blog\12.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\blog\4.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\blog\9.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\blog\blog-2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\blog\blog-3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\blog\blog-6.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\blog\blog.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\blog\comment.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\blog\img.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\button_builder\checkbox-sprite.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\button_builder\colorpicker_overlay.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\button_builder\colorpicker_select.gif" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\button_builder\hex_bg.gif" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\button_builder\rainbow.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\button_builder\scroll.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\button_builder\select.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\checkout\paypal.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\dashboard\boy-2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\dashboard\chrome.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\dashboard\designer.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\dashboard\firefox.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\dashboard\safari.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\dashboard\smily.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\dashboard\user.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\details_close.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\details_open.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\01.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\02.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\03.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\04.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\05.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\06.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\07.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\08.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\banner.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\card.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\mastercard.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\paypal.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\product-table-1.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\product-table-2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\product-table-3.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\product-table-4.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\product-table-5.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\product-table-6.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\ecommerce\visa.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\1.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\11.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\3.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\4.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\5.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\6.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\7.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\8.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\8.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\banner-2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\banner.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\cosmetic.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\gplus.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\linkedin.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\order-success.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\pinterest.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\slider.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\space.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\twitter.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email-template\youtube.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\email\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\endless-logo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\faq\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\faq\2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\faq\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\faq\learning-1.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\favicon.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\job-search\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\job-search\2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\job-search\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\job-search\4.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\job-search\5.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\job-search\6.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\1-title.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\2-first_section.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\2-gallery.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\2-title.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\3-first_section.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\3-gallery.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\3-title.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\background.html" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\bg_gallery.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\bitcoin-dashboard.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\Blog-app.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\box-Creative-demo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\compact-Creative-demo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\ecommerce-app.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\ecommerce-dashboard.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\Email-template_background.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\email_section_img.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\features-2-first_section.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\footer-bg.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\footer-logo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\home\pattern.html" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\icon-navbar-Creative-demo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\job-search-app.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\knowlagebase-app.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\light-Creative-demo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\logo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\mail-app.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\main-gallery.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\New-2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\Project-dashboard.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\rtl-Creative-demo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\second_img.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\social-app.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\support-ticket-app.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\svg_2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\To-Do-app.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\University-dashboard.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\widget.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\landing\widgets-bck.html" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\01.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\010.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\011.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\012.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\013.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\014.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\015.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\016.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\02.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\03.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\04.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\05.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\06.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\07.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\08.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\09.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\lightgallry\default-skin.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\logo\compact-logo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\10.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\11.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\12.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\13.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\14.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\15.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\4.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\5.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\6.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\7.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\8.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\masonry\9.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\auth-bg-1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\bg-profile.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\calender-bg.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\clock-face.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\coming-soon-bg.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\coming-soon-Logo.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\img-cropper.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\logo-login.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\maintenance-bg.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\mobile-clock-wallpaper.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\paypal.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\profile-style-img.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\profile-style-img3.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\receiver-img.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\other-images\sad.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\product\1.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\product\10.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\product\11.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\product\12.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\product\13.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\product\15.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\product\2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\product\3.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\product\4.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\range-slider\sprite-skin-modern.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-image\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-image\2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-image\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-image\4.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-image\5.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-image\6.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-pattern\1.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-pattern\2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-pattern\3.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-pattern\4.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-pattern\5.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sidebar-pattern\6.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider-auto-width\11.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider-auto-width\12.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider-auto-width\13.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider-auto-width\14.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider-auto-width\15.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\10.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\11.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\4.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\5.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\6.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\7.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\8.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\slider\9.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\smiley.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\post-2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\post-3.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\post-4.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\post-5.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\post-6.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\post-7.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\post-8.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\post-9.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\social-image.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\timeline-2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\timeline-3.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\social-app\timeline-4.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sort_asc.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sort_asc_disabled.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sort_both.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sort_desc.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\sort_desc_disabled.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\tree\32px.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\tree\40px.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\tree\throbber.gif" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\university\bio-1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\university\bio-2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\university\chart-1.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\university\chart-2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\university\chart-3.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\university\chart-4.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\university\math-1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\university\math-2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\university\round.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user-card\2.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user-card\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user-card\5.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user-card\6.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\1.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\11.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\12.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\14.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\15.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\16.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\2.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\3.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\4.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\5.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\6.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\7.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\8.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\9.jpg" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\images\user\user.png" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\animation\animate-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\animation\aos\aos-init.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\animation\aos\aos.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\animation\scroll-reveal\reveal-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\animation\scroll-reveal\scrollreveal.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\animation\tilt\tilt-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\animation\tilt\tilt.jquery.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\animation\wow\wow-init.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\animation\wow\wow.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\bootstrap\bootstrap.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\bootstrap\popper.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\button-builder\clipboard.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\button-builder\colorpicker.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\button-builder\extend-1.0.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\button-builder\generator.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\button-tooltip-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\calendar\fullcalendar.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\calendar\moment.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart-widget.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\chartist\chartist-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\chartist\chartist.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\chartjs\chart.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\flot-chart\excanvas.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\flot-chart\flot-script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\flot-chart\jquery.flot.categories.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\flot-chart\jquery.flot.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\flot-chart\jquery.flot.pie.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\flot-chart\jquery.flot.stack.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\flot-chart\jquery.flot.symbol.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\flot-chart\jquery.flot.time.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\google\google-chart-loader.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\google\google-chart.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\knob\knob-chart.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\knob\knob.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\morris-chart\morris-script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\morris-chart\morris.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\morris-chart\prettify.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\morris-chart\raphael.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\peity-chart\peity-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\peity-chart\peity.jquery.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\sparkline\sparkline-script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chart\sparkline\sparkline.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\chat-menu.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\clipboard\clipboard-script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\clipboard\clipboard.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\compact-small-button.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\config.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\countdown.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\counter\counter-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\counter\jquery.counterup.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\counter\jquery.waypoints.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\custom-card\custom-card.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dashboard\bitcoin-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dashboard\dashboard-ecommerce\chart.custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dashboard\dashboard-ecommerce\morris-script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dashboard\dashboard-ecommerce\owl-carousel.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dashboard\default.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dashboard\project-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dashboard\server-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dashboard\university-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\buttons.bootstrap4.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\buttons.colVis.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\buttons.html5.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\buttons.print.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.autoFill.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.bootstrap4.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.buttons.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.colReorder.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.fixedHeader.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.keyTable.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.responsive.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.rowReorder.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.scroller.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\dataTables.select.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\jszip.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\pdfmake.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\responsive.bootstrap4.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatable-extension\vfs_fonts.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatables\datatable.custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datatable\datatables\jquery.dataTables.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datepicker\date-picker\datepicker.custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datepicker\date-picker\datepicker.en.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datepicker\date-picker\datepicker.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datepicker\date-time-picker\datetimepicker.custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datepicker\date-time-picker\moment.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datepicker\date-time-picker\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datepicker\daterange-picker\daterange-picker.custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datepicker\daterange-picker\daterangepicker.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\datepicker\daterange-picker\moment.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dragable\sortable-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dragable\sortable.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dropzone\dropzone-script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\dropzone\dropzone.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\ecommerce.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ace-editor\ace-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ace-editor\ace.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ace-editor\mode-css.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ace-editor\mode-javascript.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ace-editor\mode-php.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ace-editor\theme-monokai.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ace-editor\worker-css.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ace-editor\worker-javascript.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ckeditor\adapters\jquery.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ckeditor\ckeditor.custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ckeditor\ckeditor.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\ckeditor\styles.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\simple-mde\simplemde.custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\simple-mde\simplemde.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\summernote\summernote.custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\editor\summernote\summernote.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\email-app.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-builder\form-builder-1\main-built.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-builder\form-builder-1\require.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-builder\form-builder-2\beautifyhtml.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-builder\form-builder-2\form-builder-2.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-validation-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-wizard\form-wizard-five.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-wizard\form-wizard-three.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-wizard\form-wizard-two.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-wizard\form-wizard.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\form-wizard\jquery.backstretch.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\fullscreen.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\general-widget.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\height-equal.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\hide-on-scroll.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\icons\feather-icon\feather-icon-clipart.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\icons\feather-icon\feather-icon.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\icons\feather-icon\feather.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\icons\flag-icon-clipart.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\icons\icon-clipart.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\icons\icons-notify.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\icons\whether-icon-clipart.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\image-cropper\cropper-main.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\image-cropper\cropper.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\internationalization\language-picker.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\isotope.pkgd.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\jarallax_libs\libs.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\jquery-3.2.1.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\jquery.drilldown.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\jquery.ui.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\jsgrid\griddata.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\jsgrid\jsgrid.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\jsgrid\jsgrid.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\landing_sticky.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\map-js\custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\map-js\mapsjs-core.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\map-js\mapsjs-mapevents.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\map-js\mapsjs-service.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\masonry-gallery.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\megamenu.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\modal-animated.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\modernizr.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\notify\bootstrap-notify.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\notify\index.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\notify\notify-script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\owlcarousel\owl-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\owlcarousel\owl.carousel.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\page-builder\jquery.grideditor.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\page-builder\page-builder-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\photoswipe\photoswipe-ui-default.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\photoswipe\photoswipe.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\photoswipe\photoswipe.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\popover-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\print.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\prism\prism.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\product-list-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\radial-chart-tooltip.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\range-slider\ion.rangeSlider.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\range-slider\rangeslider-script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\rating\jquery.barrating.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\rating\rating-script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\script.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\scrollable\perfect-scrollbar.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\scrollable\scrollable-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\scrollpy_landing.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\select2\select2-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\select2\select2.full.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\sidebar-menu.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\sticky\sticky.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\support-ticket-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\sweet-alert\app.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\sweet-alert\sweetalert.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\theme-customizer\customizer.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\time-picker\clockpicker.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\time-picker\highlight.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\time-picker\jquery-clockpicker.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\timeline\timeline-v-1\main.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\timeline\timeline-v-2\jquery.timeliny.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\timeline\timeline-v-2\timeline-v-2-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\todo\todo.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\tooltip-init.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\touchspin\input-groups.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\touchspin\touchspin.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\touchspin\vendors.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\tour\intro-init.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\tour\intro.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\tree\jstree.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\tree\tree.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\typeahead-search\handlebars.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\typeahead-search\typeahead-custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\typeahead\handlebars.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\typeahead\typeahead.bundle.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\typeahead\typeahead.custom.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\vector-map\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\vector-map\map-vector.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\vector-map\map\jquery-jvectormap-asia-mill.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\vector-map\map\jquery-jvectormap-au-mill.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\vector-map\map\jquery-jvectormap-chicago-mill-en.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\vector-map\map\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Areas\mebelAdmin\PublicAdmin\assets\js\vertical-menu.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="public\assets\images\blog-1.jpg" />
+    <Content Include="public\assets\images\blog-2.jpg" />
+    <Content Include="public\assets\images\blog-3.jpg" />
+    <Content Include="public\assets\images\blog-4.jpg" />
+    <Content Include="public\assets\images\blog-5.jpg" />
+    <Content Include="public\assets\images\blog-6.jpg" />
+    <Content Include="public\assets\images\blog-7.jpg" />
+    <Content Include="public\assets\images\blog-8.jpg" />
+    <Content Include="public\assets\images\blog-9.jpg" />
+    <Content Include="public\assets\images\gallery-1.jpg" />
+    <Content Include="public\assets\images\gallery-2.jpg" />
+    <Content Include="public\assets\images\gallery-3.jpg" />
+    <Content Include="public\assets\images\gallery-4.jpg" />
+    <Content Include="public\assets\images\gallery-7.jpg" />
+    <Content Include="public\assets\images\map-icon.png" />
+    <Content Include="public\assets\images\product-1.png" />
+    <Content Include="public\assets\images\product-2.png" />
+    <Content Include="public\assets\images\product-3.png" />
+    <Content Include="public\assets\images\product-4.png" />
+    <Content Include="public\assets\images\product-5.png" />
+    <Content Include="public\assets\images\product-6.png" />
+    <Content Include="public\assets\images\project-1.jpg" />
+    <Content Include="public\assets\images\project-2.jpg" />
+    <Content Include="public\assets\images\project-3.jpg" />
+    <Content Include="public\assets\images\project-4.jpg" />
+    <Content Include="public\assets\images\project-5.jpg" />
+    <Content Include="public\assets\images\project-6.jpg" />
+    <Content Include="public\assets\images\specs.png" />
+    <Content Include="public\assets\images\square-1.jpg" />
+    <Content Include="public\assets\images\square-2.jpg" />
+    <Content Include="public\assets\images\square-3.jpg" />
+    <Content Include="public\assets\images\square-4.jpg" />
+    <Content Include="public\assets\images\square-5.jpg" />
+    <Content Include="public\assets\images\square-6.jpg" />
+    <Content Include="public\assets\images\user-1.jpg" />
+    <Content Include="public\assets\images\user-2.jpg" />
+    <Content Include="public\assets\images\user-3.jpg" />
+    <Content Include="public\assets\images\user-4.jpg" />
+    <Content Include="public\assets\images\user-5.jpg" />
+    <Content Include="public\bootstrap\js\bootstrap.min.js" />
+    <Content Include="public\css\animate.min.css" />
+    <Content Include="public\css\bundle.min.css" />
+    <Content Include="public\css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="public\css\font-awesome\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="public\css\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="public\css\img\grabbing.png" />
+    <Content Include="public\css\img\loader.gif" />
+    <Content Include="public\css\img\sprite-skin-nice.png" />
+    <Content Include="public\css\theme\default\image\button-search.html" />
+    <Content Include="public\css\theme\default\stylesheet\blog_custom.css" />
+    <Content Include="public\css\theme\mf\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="public\css\theme\mf\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\css\theme\mf\fonts\linearIcons54e9.html" />
+    <Content Include="public\css\theme\mf\fonts\linearIcons54e9.svg" />
+    <Content Include="public\css\theme\mf\image\map-icon.png" />
+    <Content Include="public\css\theme\mf\js\animate\animate.min.css" />
+    <Content Include="public\css\theme\mf\js\croppie\croppie.min.css" />
+    <Content Include="public\css\theme\mf\js\croppie\croppie.min.js" />
+    <Content Include="public\css\theme\mf\js\croppie\exif.js" />
+    <Content Include="public\css\theme\mf\js\datetimepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="public\css\theme\mf\js\datetimepicker\bootstrap-datetimepicker.min.js" />
+    <Content Include="public\css\theme\mf\js\datetimepicker\moment\moment-with-locales.min.js" />
+    <Content Include="public\css\theme\mf\js\datetimepicker\moment\moment.min.js" />
+    <Content Include="public\css\theme\mf\js\furniture-icons\fonts\FurnitureIcons4fc8.svg" />
+    <Content Include="public\css\theme\mf\js\furniture-icons\furniture-icons.min.css" />
+    <Content Include="public\css\theme\mf\js\ionrangeslider\img\sprite-skin-nice.png" />
+    <Content Include="public\css\theme\mf\js\ionrangeslider\ion-range-slider.min.css" />
+    <Content Include="public\css\theme\mf\js\ionrangeslider\jquery.ion.rangeSlider.js" />
+    <Content Include="public\css\theme\mf\js\jquery-2.1.1.min.js" />
+    <Content Include="public\css\theme\mf\js\magnific\jquery.magnific-popup.min.js" />
+    <Content Include="public\css\theme\mf\js\magnific\magnific-popup.css" />
+    <Content Include="public\css\theme\mf\js\main.js" />
+    <Content Include="public\css\theme\mf\js\opencart.js" />
+    <Content Include="public\css\theme\mf\js\owlcarousel\img\grabbing.png" />
+    <Content Include="public\css\theme\mf\js\owlcarousel\img\loader.gif" />
+    <Content Include="public\css\theme\mf\js\owlcarousel\jquery.owl.carousel.min.js" />
+    <Content Include="public\css\theme\mf\js\owlcarousel\owl.carousel.min.css" />
+    <Content Include="public\css\theme\mf\mainstylesheet\bootstrap.min.css" />
+    <Content Include="public\css\theme\mf\mainstylesheet\linear-icons.css" />
+    <Content Include="public\css\theme\mf\mainstylesheet\opencart.css" />
+    <Content Include="public\css\theme\mf\mainstylesheet\theme1.css" />
+    <Content Include="public\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="public\fonts\FurnitureIcons4fc8.svg" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\fonts\linearIcons54e9.svg" />
+    <Content Include="public\js\bundle1.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="public\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="public\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="public\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="public\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="public\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="public\fonts\FurnitureIcons4fc8.eot" />
+    <Content Include="public\fonts\FurnitureIcons4fc8.ttf" />
+    <Content Include="public\fonts\FurnitureIcons4fc8.woff" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="public\fonts\linearIcons54e9.eot" />
+    <Content Include="public\fonts\linearIcons54e9.ttf" />
+    <Content Include="public\fonts\linearIcons54e9.woff" />
+    <Content Include="public\fonts\linearIcons54e9.woff2" />
+    <Content Include="public\fonts\linearIconsd41d.eot" />
+    <Content Include="Areas\mebelAdmin\Views\web.config" />
+    <Content Include="Areas\mebelAdmin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Section1Divs\Index.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Section1Divs\Create.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Section1Divs\Edit.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Section1Divs\Details.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Section1Divs\Delete.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminProducts\Index.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminProducts\Create.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminOurStories\Create.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminOurStories\Delete.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminOurStories\Details.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminOurStories\Edit.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminOurStories\Index.cshtml" />
+    <Content Include="public\css\font-awesome\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="public\css\font-awesome\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="public\css\font-awesome\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="public\css\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="public\css\theme\mf\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\css\theme\mf\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\css\theme\mf\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\css\theme\mf\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="public\css\theme\mf\fonts\linearIcons54e9.eot" />
+    <Content Include="public\css\theme\mf\fonts\linearIcons54e9.ttf" />
+    <Content Include="public\css\theme\mf\fonts\linearIcons54e9.woff" />
+    <Content Include="public\css\theme\mf\fonts\linearIconsd41d.eot" />
+    <Content Include="public\css\theme\mf\js\furniture-icons\fonts\FurnitureIcons4fc8.eot" />
+    <Content Include="public\css\theme\mf\js\furniture-icons\fonts\FurnitureIcons4fc8.ttf" />
+    <Content Include="public\css\theme\mf\js\furniture-icons\fonts\FurnitureIcons4fc8.woff" />
+    <Content Include="Areas\mebelAdmin\Views\AdminProducts\Edit.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminMaifacturers\Create.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminMaifacturers\Delete.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminMaifacturers\Details.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminMaifacturers\Edit.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminMaifacturers\Index.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminProducts\AddImages.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminProducts\_ProductPict.cshtml" />
+    <Content Include="libman.json" />
+    <Content Include="Areas\mebelAdmin\Views\AdminBlogs\Create.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminBlogs\Delete.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminBlogs\Details.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminBlogs\Edit.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminBlogs\Index.cshtml" />
+    <Content Include="Areas\mebelAdmin\Views\AdminAccount\Login.cshtml" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\mebel20191110072039 - Web Deploy.pubxml" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Scripts\tinymce\license.txt" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\codesample\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\help\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\imagetools\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\quickbars\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\toc\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\toc\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Scripts\tinymce\skins\content\dark\content.css" />
+    <Content Include="Scripts\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\content\default\content.css" />
+    <Content Include="Scripts\tinymce\skins\content\default\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\content\document\content.css" />
+    <Content Include="Scripts\tinymce\skins\content\document\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\content\writer\content.css" />
+    <Content Include="Scripts\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.inline.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.mobile.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.mobile.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.mobile.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.mobile.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.inline.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.mobile.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\content.mobile.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.mobile.css" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.mobile.min.css" />
+    <Content Include="Scripts\tinymce\themes\mobile\theme.js" />
+    <Content Include="Scripts\tinymce\themes\mobile\theme.min.js" />
+    <Content Include="Scripts\tinymce\themes\silver\theme.js" />
+    <Content Include="Scripts\tinymce\themes\silver\theme.min.js" />
+    <Content Include="Scripts\tinymce\tinymce.js" />
+    <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Uploads\Asset 1 %281%29.svg" />
+    <Content Include="Uploads\Asset.svg" />
+    <Content Include="Uploads\ProductPhoto\01b192cf-39e7-457d-a8ef-eb7182b140a9.jpg" />
+    <Content Include="Uploads\ProductPhoto\1971e090-23c2-422f-84c8-bd3c773d08e6.jpg" />
+    <Content Include="Uploads\ProductPhoto\1f7d5013-8bc7-4684-8b40-d2eaf0fc08bd.png" />
+    <Content Include="Uploads\ProductPhoto\2561b6e5-ad50-4c4d-8c10-09abffddbc8c.jpg" />
+    <Content Include="Uploads\ProductPhoto\3404748f-d3d0-4769-b83c-bf019e640d8c.jpg" />
+    <Content Include="Uploads\ProductPhoto\343286ac-e383-4f53-96a1-26d9b4b3645e.jpg" />
+    <Content Include="Uploads\ProductPhoto\3949cb53-8803-4a01-b781-23e4c1439394.jpg" />
+    <Content Include="Uploads\ProductPhoto\50803231-f9e1-4817-a977-7078da1aee88.jpg" />
+    <Content Include="Uploads\ProductPhoto\6c35f584-9858-40ff-88de-32e0e955084e.png" />
+    <Content Include="Uploads\ProductPhoto\707e496e-5a64-4f14-9da5-1fd2e628e29f.png" />
+    <Content Include="Uploads\ProductPhoto\7573c27f-592a-49a8-bf6a-46720f76d53e.jpg" />
+    <Content Include="Uploads\ProductPhoto\8c1d9e09-7285-43fa-ba3e-d158a1673dae.jpg" />
+    <Content Include="Uploads\ProductPhoto\8c2b23c0-d384-403f-a021-14e470cf1e96.jpg" />
+    <Content Include="Uploads\ProductPhoto\9b17c0ad-2df0-4d2f-97cc-db74e9e0fc41.jpg" />
+    <Content Include="Uploads\ProductPhoto\ac835d2e-0980-4bf1-9ece-45c1a0a6dedb.jpg" />
+    <Content Include="Uploads\ProductPhoto\adc98320-433c-4b85-bda2-f801eeb9ec8f.jpg" />
+    <Content Include="Uploads\ProductPhoto\b8f1673e-1f2b-435c-b3d6-7950dd9f0aa2.jpg" />
+    <Content Include="Uploads\ProductPhoto\be701376-8b5a-40ad-bb97-bef350c26a66.jpg" />
+    <Content Include="Uploads\ProductPhoto\bee25f4f-7812-4043-9148-f0829fd83e8f.jpg" />
+    <Content Include="Uploads\ProductPhoto\c64b440a-b555-421a-b176-8bfd4a3f317f.jpg" />
+    <Content Include="Uploads\ProductPhoto\c93e1531-8ed4-455c-8a40-478ce7eb0e13.jpg" />
+    <Content Include="Uploads\ProductPhoto\e496bec6-12df-4294-a662-b5674ca13a1b.jpg" />
+    <Content Include="Uploads\ProductPhoto\e6182ebb-56b1-49e0-8591-c166f9805c02.png" />
+    <Content Include="Uploads\ProductPhoto\eec29cfa-8b21-431c-9e68-fb66e0440b79.jpg" />
+    <Content Include="Uploads\ProductPhoto\f96c5220-0173-4a6d-a989-c4e84bfb311e.jpg" />
+    <Content Include="Uploads\sofi.svg" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\AllProducts\Details.cshtml" />
+    <Content Include="Views\AllProducts\Index.cshtml" />
+    <Content Include="Views\AllBlog\Details.cshtml" />
+    <Content Include="Views\AllBlog\Index.cshtml" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide\fonts\tinymce-mobile.woff" />
+    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\fonts\tinymce-mobile.woff" />
+    <Content Include="Scripts\tinymce\langs\readme.md" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\mebelAdmin\Models\" />
+    <Folder Include="Areas\mebelAdmin\PublicAdmin\assets\images\server\" />
+    <Folder Include="Areas\mebelAdmin\Views\AuthenticationFilter\" />
+    <Folder Include="Uploads\BlogImage\" />
+    <Folder Include="Uploads\CategoryPhoto\" />
+    <Folder Include="Uploads\Section1Photo\" />
+    <Folder Include="Views\MainLanguage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LangResources\RGlobal.az.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RGlobal.az.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LangResources\RGlobal.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RGlobal.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LangResources\RGlobal.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RGlobal.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55518</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44372/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

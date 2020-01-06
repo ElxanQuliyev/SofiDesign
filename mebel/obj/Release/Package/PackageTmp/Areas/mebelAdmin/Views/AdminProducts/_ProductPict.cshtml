@@ -1,0 +1,37 @@
+﻿@using mebel.Models
+@model List<ProductImage>
+@{
+    ViewBag.Title = "_ProductPict";
+    Layout = "~/Areas/mebelAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (Model == null || (Model != null && Model.Count == 0))
+{
+    <span>
+        Mehsula aid sekiller burada...<br />
+        Mesula aid Sekil tapilmadi.
+    </span>
+}
+else
+{
+    <div class="row">
+        @foreach (ProductImage proItem in Model)
+        {
+
+            <div class="col-md-2">
+                <div class="my-2">
+                    <img src="@proItem.Photo" alt="@proItem.Product.Name" style="width:95%;margin:auto;height:150px;padding:5px;" class="img-thumbnail" />
+                </div>
+                <div class="mt-1">
+
+                    @Ajax.ActionLink("Sil", "RemoveProductPicture", new { id = proItem.Id },
+                   new AjaxOptions { HttpMethod = "Get", Confirm = "Mehsul Sekli silinsin ?", OnComplete = "refreshProductPicture" }, new { @class = "btn btn-danger btn-sm del-picture" })
+                </div>
+            </div>
+        }
+    </div>
+
+}
+<script>
+    $("a.del-picture").prepend('<i class="fas fa-trash"></i>')
+</script>

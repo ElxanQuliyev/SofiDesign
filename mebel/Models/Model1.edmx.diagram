@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5dafc369c5a4b6eac58b1ee67c452e8" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Blog" Width="1.5" PointX="5.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Category" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ChooseSize" Width="1.5" PointX="7.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LanguageTB" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Maifacturer" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Material" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OurStory" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ProductImage" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.section1Divs" Width="1.5" PointX="2.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Setting" Width="1.5" PointX="7.75" PointY="10.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Materials_LanguageTB" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Products_LanguageTB" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Products_Maifacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Products_Materials" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProductImage_Products" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

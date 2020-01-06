@@ -1,0 +1,73 @@
+﻿@using mebel.Models
+@model mebel.ViewModels.homeModels
+@{
+    ViewBag.Title = "About";
+}
+<section class="main-header " style="background-image:url(@Model.ourstroy.Photo)">
+    <header>
+        <div class="container text-center">
+            <h1 class="h2 title">Haqqımızda</h1>
+            <ol class="breadcrumb breadcrumb-inverted">
+                <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a></li>
+                <li><a class="active" href=" @Url.Action("About", "Home") ">Haqqımızda</a></li>
+            </ol>
+        </div>
+    </header>
+</section>
+<section class="contact" id="information-information">
+    <div class="container">
+        <header class="hidden">
+            <h3 class="h3 title">Biz kimik?</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <section class="history">
+                        <div class="container">
+
+                            <!-- === History header === -->
+                            @*<header>
+                                    <div class="row">
+                                        <div class="col-md-offset-2 col-md-8 text-center">
+                                            <h1 class="h2 title">A bit of history</h1>
+                                            <div class="text">
+                                                <p>Our architects and designers constantly and carefully monitor the environment, they accept and develop changes, research fashion and architectural, as well as sociological, changes and transform them into unique design.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </header>*@
+
+                            <!-- === row item === -->
+
+                            <div class="row row-block">
+                                <div class="col-md-5 history-image" style="background-image:url(image/catalog/mf_demo/blog-3.jpg)">
+                                    <div class="history-title">
+                                        <h2 class="title">2019</h2>
+                                        <p>Sofi MMC</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 history-desc">
+                                    <div class="h5 title">@Model.ourstroy.Headers</div>
+                                    @Model.ourstroy.Description
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+
+                </div>
+
+
+
+
+                <p><br></p>
+
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<mebel.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/mebelAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Available)
+        </th>
+        <th>
+            Category
+        </th>
+
+        <th>
+            Manifactured
+        </th>
+        <th>
+            Material
+        </th>
+        <th>
+            Language
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td style="width:25%">
+        <img src="@item.Photo" class="img-thumbnail" alt="@item.Name" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Discount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Available)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Category.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Maifacturer.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Material.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LanguageTB.CultureCode)
+    </td>
+    <td style="width:35%">
+        <div class="Elements">
+            <a href=@Url.Action("Edit","AdminProducts",new { id=item.Id}) class="mr-3" style="padding:10px 10px;background-color:#4c4af4;color:#fff; border-radius:5px">
+                <i style="pointer-events:none" class="far fa-edit"></i>
+            </a>
+            <a href=@Url.Action("AddImages","AdminProducts",new { id=item.Id}) class="mr-3" style="padding:10px 10px;background-color:#4c4af4;color:#fff; border-radius:5px">
+                <i style="pointer-events:none" class="far fa-images"></i>
+            </a>
+            <a href=@Url.Action("Delete","AdminProducts",new { id=item.Id}) style="padding:10px 10px;background-color:brown;color:#fff; border-radius:5px">
+                <i class="far fa-trash-alt"></i>
+            </a>
+
+        </div>
+    </td>
+</tr>
+}
+
+</table>
